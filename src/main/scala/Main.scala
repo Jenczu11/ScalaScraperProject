@@ -1,11 +1,17 @@
 import Downloader.{DownloaderFactory, DownloaderType}
+import Parser.ParserHelper
+import net.ruippeixotog.scalascraper.dsl.DSL.deepFunctorOps
+import net.ruippeixotog.scalascraper.dsl.DSL._
+import net.ruippeixotog.scalascraper.dsl.DSL.Extract._
+import net.ruippeixotog.scalascraper.dsl.DSL.Parse._
+
 
 object Main extends App {
-//  val moviesDownloader = DownloaderFactory(DownloaderType.MoviesSearch)
-//  val results = moviesDownloader.download("wonder%20woman")
-//  println(results)
-
   val detailsDownloader = DownloaderFactory(DownloaderType.Details)
-  val details = detailsDownloader.download("/person/Tom+Hanks-124")
-  println(details)
+  val elements = detailsDownloader.download("/person/Jack+O'Connell-651840")
+  val parserHelper = new ParserHelper()
+  println(parserHelper.getItemProp(elements, "name"))
+
+//  val results = elements >> text(".characterPreview__title")
+//  println(results)
 }
