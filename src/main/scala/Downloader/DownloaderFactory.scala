@@ -8,5 +8,6 @@ object DownloaderFactory {
     case DownloaderType.MoviesSearch => new MoviesSearchDownloader()
     case DownloaderType.PersonsSearch => new PersonsSearchDownloader()
     case DownloaderType.CharactersSearch => new CharactersSearchDownloader()
+    case DownloaderType.Details => new DetailsDownloader()
   }
 }
