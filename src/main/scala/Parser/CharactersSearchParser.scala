@@ -20,8 +20,8 @@ class CharactersSearchParser(items: List[Element]) extends BaseParser(items) {
     val numbersOfLikesList = optionsListToList(numbersOfLikes)
 
     val searchResultsListBuffer = ListBuffer[BaseSearchResult]()
-    val superList = namesList.lazyZip(linksList).lazyZip(numbersOfLikesList)
-    for ((name, link, numberOfLikes) <- superList) {
+    val zippedList = namesList.lazyZip(linksList).lazyZip(numbersOfLikesList)
+    for ((name, link, numberOfLikes) <- zippedList) {
       searchResultsListBuffer += new CharactersSearchResult(name, link, numberOfLikes)
     }
     searchResultsListBuffer.toList
