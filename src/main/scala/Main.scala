@@ -13,5 +13,5 @@ object Main extends App {
   val charactersSearchDownloader = DownloaderFactory(DownloaderType.CharactersSearch)
   val elements = charactersSearchDownloader.download("jack")
   val charactersSearchParser = new CharactersSearchParser(elements)
-  println(charactersSearchParser.parseToResultList())
+  println(charactersSearchParser.parseItems())
 }
