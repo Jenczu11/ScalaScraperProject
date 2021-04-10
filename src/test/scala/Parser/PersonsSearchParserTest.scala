@@ -16,7 +16,7 @@ class PersonsSearchParserTest extends AnyFunSuite {
   }
 
   test("Search persons with 'tom hanks'") {
-    val elements = personsSearchDownloader.download("Viola di caprio")
+    val elements = personsSearchDownloader.download("tom hanks")
     val personsSearchParser = new PersonsSearchParser(elements)
     val resultsList = personsSearchParser.parseItems()
     print(ViewHelper.printSearchResults(resultsList))

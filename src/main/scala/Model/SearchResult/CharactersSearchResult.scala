@@ -1,5 +1,7 @@
 package Model.SearchResult
 
+import Parser.ParserConstants
+
 class CharactersSearchResult(override val name: String,
                              override val link: String,
                              val numberOfLikes: String)
@@ -8,7 +10,7 @@ class CharactersSearchResult(override val name: String,
   override def toString: String = {
     var output: String = s"$name"
     numberOfLikes match {
-      case "---" => // Do nothing.
+      case ParserConstants.emptyStringValue => // Do nothing.
       case _ => output += s", liczba polubień: $numberOfLikes"
     }
     output

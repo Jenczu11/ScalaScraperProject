@@ -30,9 +30,9 @@ class BaseParser(items: List[Element]) {
           if (value.nonEmpty) {
             listBuffer += value
           } else {
-            listBuffer += "---"
+            listBuffer += ParserConstants.emptyStringValue
           }
-        case None => listBuffer += "---"
+        case None => listBuffer += ParserConstants.emptyStringValue
       }
     }
     listBuffer.toList
