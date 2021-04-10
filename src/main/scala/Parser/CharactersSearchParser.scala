@@ -1,16 +1,15 @@
 package Parser
 
-import Model.{BaseSearchResult, CharactersSearchResult}
+import Model.SearchResult.CharactersSearchResult
 import net.ruippeixotog.scalascraper.model.Element
-import net.ruippeixotog.scalascraper.dsl.DSL._
-import net.ruippeixotog.scalascraper.dsl.DSL.Extract._
 
 import scala.collection.mutable.ListBuffer
 
 
-class CharactersSearchParser(items: List[Element]) extends BaseParser(items) {
+class CharactersSearchParser(override val items: List[Element])
+  extends BaseParser(items) with Parser[CharactersSearchResult] {
 
-  def parseToResultList(): List[BaseSearchResult] = {
+  def parseItems(): List[CharactersSearchResult] = {
     val names = getClassText("characterPreview__title")
     val links = getLinkInClass("characterPreview__title")
     val numbersOfLikes = getClassText("commonRating__countNumber")
@@ -19,7 +18,7 @@ class CharactersSearchParser(items: List[Element]) extends BaseParser(items) {
     val linksList = optionsListToList(links)
     val numbersOfLikesList = optionsListToList(numbersOfLikes)
 
-    val searchResultsListBuffer = ListBuffer[BaseSearchResult]()
+    val searchResultsListBuffer = ListBuffer[CharactersSearchResult]()
     val zippedList = namesList.lazyZip(linksList).lazyZip(numbersOfLikesList)
     for ((name, link, numberOfLikes) <- zippedList) {
       searchResultsListBuffer += new CharactersSearchResult(name, link, numberOfLikes)

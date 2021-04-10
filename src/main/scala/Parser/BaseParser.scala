@@ -26,8 +26,13 @@ class BaseParser(items: List[Element]) {
     var listBuffer = new ListBuffer[String]()
     for (value <- values) {
       value match {
-        case Some(value) => listBuffer += value
-        case None => // Do nothing.
+        case Some(value) =>
+          if (value.nonEmpty) {
+            listBuffer += value
+          } else {
+            listBuffer += "---"
+          }
+        case None => listBuffer += "---"
       }
     }
     listBuffer.toList
