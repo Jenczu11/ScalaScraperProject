@@ -1,13 +1,14 @@
-package Parser
+package Parser.Search
 
 import Model.SearchResult.MoviesSearchResult
+import Parser.{BaseParser, ParserConstants}
 import net.ruippeixotog.scalascraper.model.Element
 
 import scala.collection.mutable.ListBuffer
 
 
 class MoviesSearchParser(override val items: List[Element])
-  extends BaseParser(items) with Parser[MoviesSearchResult] {
+  extends BaseParser(items) with SearchParser[MoviesSearchResult] {
 
   def parseItems(): List[MoviesSearchResult] = {
     val names = getClassText("filmPreview__title")

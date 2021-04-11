@@ -1,6 +1,7 @@
 package Parser
 
 import Downloader.{Downloader, DownloaderFactory, DownloaderType}
+import Parser.Search.MoviesSearchParser
 import View.ViewHelper
 import org.scalatest.funsuite.AnyFunSuite
 

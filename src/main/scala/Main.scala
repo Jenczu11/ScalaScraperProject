@@ -1,5 +1,6 @@
 import Downloader.{DownloaderFactory, DownloaderType}
-import Parser.{BaseParser, CharactersSearchParser}
+import Parser.BaseParser
+import Parser.Search.CharactersSearchParser
 import net.ruippeixotog.scalascraper.dsl.DSL.deepFunctorOps
 import net.ruippeixotog.scalascraper.dsl.DSL._
 import net.ruippeixotog.scalascraper.dsl.DSL.Extract._

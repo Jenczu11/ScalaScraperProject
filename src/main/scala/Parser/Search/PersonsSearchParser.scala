@@ -1,13 +1,14 @@
-package Parser
+package Parser.Search
 
 import Model.SearchResult.PersonsSearchResult
+import Parser.BaseParser
 import net.ruippeixotog.scalascraper.model.Element
 
 import scala.collection.mutable.ListBuffer
 
 
 class PersonsSearchParser(override val items: List[Element])
-  extends BaseParser(items) with Parser[PersonsSearchResult] {
+  extends BaseParser(items) with SearchParser[PersonsSearchResult] {
 
   def parseItems(): List[PersonsSearchResult] = {
     val names = getClassText("hit__title")
