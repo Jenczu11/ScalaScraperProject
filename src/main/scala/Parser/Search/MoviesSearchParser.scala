@@ -10,11 +10,11 @@ import scala.collection.mutable.ListBuffer
 class MoviesSearchParser(override val items: List[Element])
   extends BaseParser(items) with SearchParser[MoviesSearchResult] {
 
-  def parseItems(): List[MoviesSearchResult] = {
+  def parseItemsToList(): List[MoviesSearchResult] = {
     val names = getClassText("filmPreview__title")
     val links = getLinkInClass("filmPreview__titleDetails")
     val genres = getClassText("filmPreview__info filmPreview__info--genres ul")
-    val ratings = getItemText("ratingValue")
+    val ratings = getItemPropText("ratingValue")
 
     val namesList = optionsListToList(names)
     val linksList = optionsListToList(links)

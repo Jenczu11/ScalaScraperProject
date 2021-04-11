@@ -11,6 +11,7 @@ class DetailsDownloader extends Downloader {
     val doc = browser.get(baseUrl + query)
     val g1 = doc >> elementList("[data-group=\"g1\"]")
     val g2 = doc >> elementList("[data-group=\"g2\"]")
-    g1 ++ g2
+    val g6 = doc >> elementList("[data-group=\"g6\"]")
+    g1 ++ g2 ++ g6
   }
 }

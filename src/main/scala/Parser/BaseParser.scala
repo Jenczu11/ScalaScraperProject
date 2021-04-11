@@ -7,13 +7,22 @@ import net.ruippeixotog.scalascraper.dsl.DSL.Extract._
 import scala.collection.mutable.ListBuffer
 
 class BaseParser(items: List[Element]) {
-  def getItemText(itemPropName: String): List[Option[String]] = {
+  def getItemPropText(itemPropName: String): List[Option[String]] = {
     val query: String = "[itemprop=\"" + itemPropName + "\"]"
     items.map(_ >?> text(query))
   }
 
   def getClassText(className: String): List[Option[String]] = {
     val query: String = "." + className
+    items.map(_ >?> text(query))
+  }
+
+  def getClassElements(className: String): List[Option[List[Element]]] = {
+    val query: String = "." + className
+    items.map(_ >?> elementList(query))
+  }
+
+  def getTextWithQuery(query: String): List[Option[String]] = {
     items.map(_ >?> text(query))
   }
 
@@ -36,5 +45,30 @@ class BaseParser(items: List[Element]) {
       }
     }
     listBuffer.toList
+  }
+
+  def optionsListToFirstElement(lists: List[Option[List[Element]]]): List[Element] = {
+    for (list <- lists) {
+      list match {
+        case Some(list) =>
+          if (list.nonEmpty)
+            return list
+        case None => // Do nothing.
+      }
+    }
+    List.empty[Element]
+  }
+
+  def optionsListToFirstElement(values: List[Option[String]]): String = {
+    for (value <- values) {
+      value match {
+        case Some(value) =>
+          if (value.nonEmpty) {
+            return value
+          }
+        case None => // Do nothing.
+      }
+    }
+    ParserConstants.emptyStringValue
   }
 }

@@ -10,7 +10,7 @@ import scala.collection.mutable.ListBuffer
 class PersonsSearchParser(override val items: List[Element])
   extends BaseParser(items) with SearchParser[PersonsSearchResult] {
 
-  def parseItems(): List[PersonsSearchResult] = {
+  def parseItemsToList(): List[PersonsSearchResult] = {
     val names = getClassText("hit__title")
     val links = getLinkInClass("hit__title")
     val fullNames = getClassText("hit__real-name")

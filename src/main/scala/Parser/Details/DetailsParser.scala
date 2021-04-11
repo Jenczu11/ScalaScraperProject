@@ -1,9 +1,9 @@
-package Parser.Search
+package Parser.Details
 
 import net.ruippeixotog.scalascraper.model.Element
 
-trait SearchParser[T] {
+trait DetailsParser[T] {
   val items: List[Element]
 
-  def parseItemsToList(): List[T]
+  def parseItemsToObject(): T
 }
