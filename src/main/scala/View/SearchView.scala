@@ -1,16 +1,16 @@
 package View
 
 import Model.SearchResult.BaseSearchResult
-import View.SearchType.SearchType
+import View.ObjectType.ObjectType
 
-class SearchView(searchType: SearchType) extends ViewBase() with View {
+class SearchView(searchType: ObjectType) extends ViewBase() with View {
 
-   def display(): Unit = {
+  def display(): Unit = {
     println(delimiter)
     searchType match {
-      case SearchType.Movies => println("Wyszukiwanie filmów")
-      case SearchType.Persons => println("Wyszukiwanie ludzi kina")
-      case SearchType.Characters => println("Wyszukiwanie postaci")
+      case ObjectType.Movies => println("Wyszukiwanie filmów")
+      case ObjectType.Persons => println("Wyszukiwanie ludzi kina")
+      case ObjectType.Characters => println("Wyszukiwanie postaci")
     }
     println(
       "Wpisz wyszukiwaną frazę: "
@@ -33,15 +33,18 @@ class SearchView(searchType: SearchType) extends ViewBase() with View {
     println(output)
   }
 
-   def displayOptions(resultsSize: Int): Unit = {
-    var output: String = "Wybierz liczbę od 1 do " + resultsSize + " aby zobaczyć szczegóły "
-    searchType match {
-      case SearchType.Movies => output += "filmu."
-      case SearchType.Persons => output += "osoby."
-      case SearchType.Characters => output += "postaci."
+  def displayOptions(resultsSize: Int): Unit = {
+    var output = ""
+    if (resultsSize > 0) {
+      output += "Wybierz liczbę od 1 do " + resultsSize + " aby zobaczyć szczegóły "
+      searchType match {
+        case ObjectType.Movies => output += "filmu."
+        case ObjectType.Persons => output += "osoby."
+        case ObjectType.Characters => output += "postaci."
+      }
+      output += System.lineSeparator
     }
-     output += System.lineSeparator
-     output += "Wybierz 0 aby wyszukać ponownie lub -1 aby wyjść do menu głównego."
-     println(output)
+    output += "Wybierz 0 aby wyszukać ponownie lub -1 aby wyjść do menu głównego."
+    println(output)
   }
 }

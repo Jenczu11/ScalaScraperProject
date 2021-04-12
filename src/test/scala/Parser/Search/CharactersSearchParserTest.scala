@@ -1,7 +1,7 @@
 package Parser.Search
 
 import Downloader.{Downloader, DownloaderFactory, DownloaderType}
-import View.{SearchType, SearchView}
+import View.{ObjectType, SearchView}
 import org.scalatest.funsuite.AnyFunSuite
 
 class CharactersSearchParserTest extends AnyFunSuite {
@@ -11,7 +11,7 @@ class CharactersSearchParserTest extends AnyFunSuite {
     val elements = charactersSearchDownloader.download("jack")
     val charactersSearchParser = new CharactersSearchParser(elements)
     val resultsList = charactersSearchParser.parseItemsToList()
-    val searchView = new SearchView(SearchType.Characters)
+    val searchView = new SearchView(ObjectType.Characters)
     print(searchView.displaySearchResults(resultsList))
     assert(resultsList.size == 9)
   }
@@ -20,7 +20,7 @@ class CharactersSearchParserTest extends AnyFunSuite {
     val elements = charactersSearchDownloader.download("batman")
     val charactersSearchParser = new CharactersSearchParser(elements)
     val resultsList = charactersSearchParser.parseItemsToList()
-    val searchView = new SearchView(SearchType.Characters)
+    val searchView = new SearchView(ObjectType.Characters)
     print(searchView.displaySearchResults(resultsList))
     assert(resultsList.size == 1)
   }

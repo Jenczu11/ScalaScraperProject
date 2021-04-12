@@ -2,6 +2,7 @@ package View
 
 class MainView extends ViewBase() {
   def display(): Unit = {
+    println(delimiter)
     print(
       "Filmweb scrapper" + System.lineSeparator +
       delimiter + System.lineSeparator +
