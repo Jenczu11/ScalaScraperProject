@@ -32,11 +32,7 @@ class MovieDetailsParser (override val items: List[Element])
       "director" -> getItemPropText("director"),
       "screenWriter" -> getItemPropText("creator")
     )
-    val movieFieldsMap = mutable.Map[String, Any]()
-    for (optionField <- movieOptionsFieldsMap) {
-      movieFieldsMap += (optionField._1 -> optionsListToFirstElement(optionField._2))
-    }
-    movieFieldsMap
+    optionsMapToAnyMap(movieOptionsFieldsMap)
   }
 
   private def parseActorsElements(): List[String] = {

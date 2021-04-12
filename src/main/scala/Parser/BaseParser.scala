@@ -4,6 +4,7 @@ import net.ruippeixotog.scalascraper.model.Element
 import net.ruippeixotog.scalascraper.dsl.DSL._
 import net.ruippeixotog.scalascraper.dsl.DSL.Extract._
 
+import scala.collection.mutable
 import scala.collection.mutable.ListBuffer
 
 class BaseParser(items: List[Element]) {
@@ -70,5 +71,13 @@ class BaseParser(items: List[Element]) {
       }
     }
     ParserConstants.emptyStringValue
+  }
+
+  def optionsMapToAnyMap(optionsMap: mutable.Map[String, List[Option[String]]]): mutable.Map[String, Any] = {
+    val map = mutable.Map[String, Any]()
+    for (optionField <- optionsMap) {
+      map += (optionField._1 -> optionsListToFirstElement(optionField._2))
+    }
+    map
   }
 }

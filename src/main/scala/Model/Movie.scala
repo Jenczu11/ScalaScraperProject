@@ -22,17 +22,7 @@ class Movie {
   def this(fields: mutable.Map[String, Any]) {
     this()
     for ((name, value) <- fields) {
-      this.setField(name, value)
-    }
-  }
-
-  private def setField(fieldName: String, fieldValue: Any) {
-    this.getClass.getDeclaredFields.find(_.getName == fieldName) match {
-      case Some(field) =>
-        field.setAccessible(true)
-        field.set(this, fieldValue)
-      case None =>
-        throw new IllegalArgumentException("No field named " + fieldName)
+      ModelHelper.setField(this, name, value)
     }
   }
 
