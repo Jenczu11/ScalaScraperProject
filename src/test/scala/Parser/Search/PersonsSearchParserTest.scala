@@ -1,7 +1,7 @@
 package Parser.Search
 
 import Downloader.{Downloader, DownloaderFactory, DownloaderType}
-import View.ViewHelper
+import View.{SearchType, SearchView}
 import org.scalatest.funsuite.AnyFunSuite
 
 class PersonsSearchParserTest extends AnyFunSuite {
@@ -11,7 +11,8 @@ class PersonsSearchParserTest extends AnyFunSuite {
     val elements = personsSearchDownloader.download("di caprio")
     val personsSearchParser = new PersonsSearchParser(elements)
     val resultsList = personsSearchParser.parseItemsToList()
-    print(ViewHelper.printSearchResults(resultsList))
+    val searchView = new SearchView(SearchType.Persons)
+    print(searchView.displaySearchResults(resultsList))
     assert(resultsList.size == 8)
   }
 
@@ -19,7 +20,8 @@ class PersonsSearchParserTest extends AnyFunSuite {
     val elements = personsSearchDownloader.download("tom hanks")
     val personsSearchParser = new PersonsSearchParser(elements)
     val resultsList = personsSearchParser.parseItemsToList()
-    print(ViewHelper.printSearchResults(resultsList))
+    val searchView = new SearchView(SearchType.Persons)
+    print(searchView.displaySearchResults(resultsList))
     assert(resultsList.size == 1)
   }
 }
