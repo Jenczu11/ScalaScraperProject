@@ -3,6 +3,7 @@ package Model
 import Model.PersonType.PersonType
 
 import scala.collection.mutable
+import scala.collection.mutable.ListBuffer
 
 class Person {
   val personType: List[PersonType] = List.empty[PersonType]
@@ -19,6 +20,17 @@ class Person {
     }
   }
 
-  override def toString: String = s"Person(" +
-    s"$personType, $name, $description, $dateOfBirth, $placeOfBirth, $height)"
+  override def toString: String = {
+    var personTypeBuffer = ListBuffer[String]()
+    for (pt <- personType) {
+      personTypeBuffer += pt.toString
+    }
+
+    s"Imię i nazwsko: $name" + System.lineSeparator +
+    s"Zawód filmowy: ${personTypeBuffer.toList.mkString(", ")}" + System.lineSeparator +
+    s"Data urodzenia: $dateOfBirth" + System.lineSeparator +
+    s"Miejsce urodzenia: $placeOfBirth" + System.lineSeparator +
+    s"Wzrost: $height" + System.lineSeparator +
+    s"Opis: $description" + System.lineSeparator
+  }
 }
