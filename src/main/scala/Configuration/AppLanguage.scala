@@ -3,5 +3,6 @@ package Configuration
 import com.osinka.i18n.Lang
 
 trait AppLanguage {
-  implicit val userLang: Lang = Lang("pl")
+  implicit var userLang: Lang = Lang("en")
+  val availableLanguages: List[String] = List("en","pl")
 }

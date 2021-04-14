@@ -11,6 +11,7 @@ class MainView extends ViewBase() {
       Messages("mainview.searchmovie") + System.lineSeparator +
       Messages("mainview.searchpeople") + System.lineSeparator +
       Messages("mainview.searchcharacters") + System.lineSeparator +
+      Messages("mainview.changelang") + System.lineSeparator +
       Messages("mainview.closeapp") + System.lineSeparator)
   }
 }

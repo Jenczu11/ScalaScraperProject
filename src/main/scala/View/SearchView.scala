@@ -2,29 +2,30 @@ package View
 
 import Model.SearchResult.BaseSearchResult
 import View.ObjectType.ObjectType
+import com.osinka.i18n.Messages
 
 class SearchView(searchType: ObjectType) extends ViewBase() with View {
 
   def display(): Unit = {
     println(delimiter)
     searchType match {
-      case ObjectType.Movies => println("Wyszukiwanie filmów")
-      case ObjectType.Persons => println("Wyszukiwanie ludzi kina")
-      case ObjectType.Characters => println("Wyszukiwanie postaci")
+      case ObjectType.Movies => println(Messages("searchview.movies"))
+      case ObjectType.Persons => println(Messages("searchview.persons"))
+      case ObjectType.Characters => println(Messages("searchview.characters"))
     }
     println(
-      "Wpisz wyszukiwaną frazę: "
+      Messages("searchview.searchprompt")
     )
   }
 
   def displaySearchResults(results: List[BaseSearchResult]): Unit = {
     var output: String = delimiter + System.lineSeparator
     if (results.isEmpty) {
-      output += "Nie znaleziono wyników!"
+      output += Messages("searchview.noresults")
       println(output)
       return
     }
-    output += "Znaleziono " + results.size + " wyników: " + System.lineSeparator
+    output += Messages("searchview.noresults",results.size) + System.lineSeparator
     var position: Int = 1
     for (result <- results) {
       output += position + ". " + result + System.lineSeparator
@@ -36,15 +37,14 @@ class SearchView(searchType: ObjectType) extends ViewBase() with View {
   def displayOptions(resultsSize: Int): Unit = {
     var output = ""
     if (resultsSize > 0) {
-      output += "Wybierz liczbę od 1 do " + resultsSize + " aby zobaczyć szczegóły "
       searchType match {
-        case ObjectType.Movies => output += "filmu."
-        case ObjectType.Persons => output += "osoby."
-        case ObjectType.Characters => output += "postaci."
+        case ObjectType.Movies => output += Messages("searchview.displayoptions.movie",resultsSize)
+        case ObjectType.Persons => output += Messages("searchview.displayoptions.persons",resultsSize)
+        case ObjectType.Characters => output += Messages("searchview.displayoptions.characters",resultsSize)
       }
       output += System.lineSeparator
     }
-    output += "Wybierz 0 aby wyszukać ponownie lub -1 aby wyjść do menu głównego."
+    output += Messages("searchview.againprompt")
     println(output)
   }
 }
