@@ -49,6 +49,7 @@ class Movie extends AppLanguage {
       Messages("movie.criticsRating", criticsRating) + System.lineSeparator +
       Messages("movie.numberOfCriticsRatings", numberOfCriticsRatings) + System.lineSeparator +
       Messages("biggerdelimiter") + System.lineSeparator +
+//      Messages("movie.description", description.split("(?<=\\.)").mkString(System.lineSeparator())) + System.lineSeparator
       Messages("movie.description", description) + System.lineSeparator
   }
 }

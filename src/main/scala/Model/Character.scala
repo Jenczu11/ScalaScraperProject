@@ -21,10 +21,11 @@ class Character extends AppLanguage {
   }
 
   override def toString: String =
-    Messages("character.name",name) + System.lineSeparator +
-    Messages("character.numberOfLikes",numberOfLikes) + System.lineSeparator +
-    Messages("character.creator",creator) + System.lineSeparator +
-    Messages("character.dateOfCreation",dateOfCreation) + System.lineSeparator +
-    Messages("character.country",country) + System.lineSeparator +
-    Messages("character.description",description) + System.lineSeparator
+    Messages("character.name", name) + System.lineSeparator +
+      Messages("character.numberOfLikes", numberOfLikes) + System.lineSeparator +
+      Messages("character.creator", creator) + System.lineSeparator +
+      Messages("character.dateOfCreation", dateOfCreation) + System.lineSeparator +
+      Messages("character.country", country) + System.lineSeparator +
+      Messages("character.description", description.split("(?<=\\.)").mkString(System.lineSeparator())) + System.lineSeparator
+//      Messages("character.description",description) + System.lineSeparator
 }
