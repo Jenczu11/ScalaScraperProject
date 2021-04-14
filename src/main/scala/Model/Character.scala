@@ -1,8 +1,11 @@
 package Model
 
+import Configuration.AppLanguage
+import com.osinka.i18n.Messages
+
 import scala.collection.mutable
 
-class Character {
+class Character extends AppLanguage {
   val name: String = "name"
   val description: String = "description"
   val numberOfLikes: String = "0"
@@ -18,10 +21,10 @@ class Character {
   }
 
   override def toString: String =
-    s"Postać: $name" + System.lineSeparator +
-    s"Liczba polubień: $numberOfLikes" + System.lineSeparator +
-    s"Twórca: $creator" + System.lineSeparator +
-    s"Data powstania: $dateOfCreation" + System.lineSeparator +
-    s"Pochodzenie: $country" + System.lineSeparator +
-    s"Opis: $description" + System.lineSeparator
+    Messages("character.name",name) + System.lineSeparator +
+    Messages("character.numberOfLikes",numberOfLikes) + System.lineSeparator +
+    Messages("character.creator",creator) + System.lineSeparator +
+    Messages("character.dateOfCreation",dateOfCreation) + System.lineSeparator +
+    Messages("character.country",country) + System.lineSeparator +
+    Messages("character.description",description) + System.lineSeparator
 }
