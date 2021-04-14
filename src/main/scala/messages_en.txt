@@ -1,0 +1,10 @@
+greet=Hello
+givennotanumber=Należy wpisać liczbę!
+askforchoice=Twój wybór:
+delimiter=--------------------------------
+title=Filmweb scrapper
+searchmovie=1. Wyszukaj film
+searchpeople=2. Wyszukaj ludzi kina
+searchcharacters=3. Wyszukaj postaci
+closeapp=4. Zamknij aplikację
+person.name=Imię i nazwisko: {0}
