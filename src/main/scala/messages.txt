@@ -3,11 +3,11 @@ givennotanumber=Należy wpisać liczbę!
 askforchoice=Twój wybór:
 delimiter=--------------------------------
 biggerdelimiter=---------------------------------------------
-title=Filmweb scrapper
-searchmovie=1. Wyszukaj film
-searchpeople=2. Wyszukaj ludzi kina
-searchcharacters=3. Wyszukaj postać
-closeapp=4. Zamknij aplikację
+mainview.title=Filmweb scrapper
+mainview.searchmovie=1. Wyszukaj film
+mainview.searchpeople=2. Wyszukaj ludzi kina
+mainview.searchcharacters=3. Wyszukaj postać
+mainview.closeapp=4. Zamknij aplikację
 
 person.name=Imię i nazwisko: {0}
 person.persontype=Zawód filmowy: {0}

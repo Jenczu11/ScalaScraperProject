@@ -6,11 +6,11 @@ class MainView extends ViewBase() {
   def display(): Unit = {
     println(delimiter)
     print(
-      Messages("title") + System.lineSeparator +
+      Messages("mainview.title") + System.lineSeparator +
       delimiter + System.lineSeparator +
-      Messages("searchmovie") + System.lineSeparator +
-      Messages("searchpeople") + System.lineSeparator +
-      Messages("searchcharacters") + System.lineSeparator +
-      Messages("closeapp") + System.lineSeparator)
+      Messages("mainview.searchmovie") + System.lineSeparator +
+      Messages("mainview.searchpeople") + System.lineSeparator +
+      Messages("mainview.searchcharacters") + System.lineSeparator +
+      Messages("mainview.closeapp") + System.lineSeparator)
   }
 }
