@@ -1,8 +1,8 @@
 package Downloader
 
+import Configuration.DownloaderConfiguration
 import net.ruippeixotog.scalascraper.model.Element
 
-trait Downloader {
-  val baseUrl: String = "https://www.filmweb.pl"
+trait Downloader extends DownloaderConfiguration{
   def download(query: String): List[Element]
 }
