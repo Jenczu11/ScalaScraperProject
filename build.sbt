@@ -16,3 +16,6 @@ libraryDependencies += "net.ruippeixotog" %% "scala-scraper" % "2.2.0"
 
 // Parsing JSON
 libraryDependencies += "io.circe" %% "circe-parser" % "0.14.0-M5"
+
+// I18n
+libraryDependencies += "com.osinka.i18n" %% "scala-i18n" % "1.0.3"
