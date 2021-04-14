@@ -2,13 +2,14 @@ package View
 
 import Model.SearchResult.BaseSearchResult
 import View.ObjectType.ObjectType
+import com.osinka.i18n.Messages
 
 class DetailView(objectType: ObjectType) extends ViewBase {
   def display(): Unit = {
     objectType match {
-      case ObjectType.Movies => println("Szczegóły filmu")
-      case ObjectType.Persons => println("Szczegóły osoby")
-      case ObjectType.Characters => println("Szczegóły postaci")
+      case ObjectType.Movies => println(Messages("detailview.movies"))
+      case ObjectType.Persons => println(Messages("detailview.persons"))
+      case ObjectType.Characters => println(Messages("detailview.characters"))
     }
   }
 

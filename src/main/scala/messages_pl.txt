@@ -36,3 +36,7 @@ character.creator=Twórca: {0}
 character.dateOfCreation=Data powstania: {0}
 character.country=Pochodzenie: {0}
 character.description=Opis: {0}
+
+detailview.movies=Szczegóły filmu
+detailview.persons=Szczegóły osoby
+detailview.characters=Szczegóły postaci
