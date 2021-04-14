@@ -1,3 +1,4 @@
+test.testMessage=Wiadomość testowa
 givennotanumber=Należy wpisać liczbę!
 askforchoice=Twój wybór:
 delimiter=--------------------------------
@@ -5,7 +6,7 @@ biggerdelimiter=---------------------------------------------
 title=Filmweb scrapper
 searchmovie=1. Wyszukaj film
 searchpeople=2. Wyszukaj ludzi kina
-searchcharacters=3. Wyszukaj postaci
+searchcharacters=3. Wyszukaj postać
 closeapp=4. Zamknij aplikację
 
 person.name=Imię i nazwisko: {0}

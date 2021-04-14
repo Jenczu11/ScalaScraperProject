@@ -1,3 +1,4 @@
+test.testMessage=Test message
 givennotanumber=Należy wpisać liczbę!
 askforchoice=Twój wybór:
 delimiter=--------------------------------
