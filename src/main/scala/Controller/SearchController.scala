@@ -9,7 +9,7 @@ import _root_.Downloader.DownloaderType.DownloaderType
 
 import scala.io.StdIn
 
-class SearchController {
+class SearchController extends BaseController  {
   var objectType: ObjectType = ObjectType.Movies
   var downloaderType: DownloaderType = DownloaderType.MoviesSearch
   var downloader: Downloader = DownloaderFactory.apply(downloaderType)

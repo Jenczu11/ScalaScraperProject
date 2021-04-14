@@ -8,7 +8,7 @@ import View.{DetailView, ObjectType, SearchView}
 
 import scala.io.StdIn
 
-class DetailsController() {
+class DetailsController() extends BaseController {
   var searchResult: BaseSearchResult = new BaseSearchResult("none", "none")
   var objectType: ObjectType = ObjectType.Movies
   var downloader: Downloader = DownloaderFactory.apply(DownloaderType.Details)
