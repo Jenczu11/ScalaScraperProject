@@ -1,10 +1,30 @@
-greet=Hello
 givennotanumber=Należy wpisać liczbę!
 askforchoice=Twój wybór:
 delimiter=--------------------------------
+biggerdelimiter=---------------------------------------------
 title=Filmweb scrapper
 searchmovie=1. Wyszukaj film
 searchpeople=2. Wyszukaj ludzi kina
 searchcharacters=3. Wyszukaj postaci
 closeapp=4. Zamknij aplikację
+
 person.name=Imię i nazwisko: {0}
+person.persontype=Zawód filmowy: {0}
+person.dateofbirth=Data urodzenia: {0}
+person.placeofbirth=Miejsce urodzenia: {0}
+person.height=Wzrost: {0}
+person.description=Opis: {0}
+
+movie.title=Film: {0}
+movie.director=Reżyseria: {0}
+movie.screenWriter=Scenariusz: {0}
+movie.genre=Gatunek: {0}
+movie.productionYear=Rok produkcji: {0}
+movie.duration=Czas trwania: {0}
+movie.premiere=Data premiery: {0}
+movie.actors=Aktorzy (role): {0}
+movie.rating=Ocena: {0}
+movie.numberOfRatings=Liczba ocen: {0}
+movie.criticsRating=Ocena krytyków: {0}
+movie.numberOfCriticsRatings=Liczba ocen krytyków: {0}
+movie.description=Opis: {0}

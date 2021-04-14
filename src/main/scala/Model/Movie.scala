@@ -1,8 +1,11 @@
 package Model
 
+import Configuration.AppLanguage
+import com.osinka.i18n.Messages
+
 import scala.collection.mutable
 
-class Movie {
+class Movie extends AppLanguage {
   val title: String = "title"
   val genre: String = "genre"
   val productionYear: String = "2000"
@@ -32,20 +35,20 @@ class Movie {
       actorsString += System.lineSeparator + " - " + actor
     }
 
-    s"Film: $title" + System.lineSeparator +
-    s"Reżyseria: $director" + System.lineSeparator +
-    s"Scenariusz: $screenWriter" + System.lineSeparator +
-    s"Gatunek: $genre" + System.lineSeparator +
-    s"Rok produkcji: $productionYear" + System.lineSeparator +
-    s"Czas trwania: $duration" + System.lineSeparator +
-    s"Data premiery: $premiere" + System.lineSeparator +
-    s"Aktorzy (role): $actorsString" + System.lineSeparator +
-    "---------------------------------------------" + System.lineSeparator +
-    s"Ocena: $rating" + System.lineSeparator +
-    s"Liczba ocen: $numberOfRatings" + System.lineSeparator +
-    s"Ocena krytyków: $criticsRating" + System.lineSeparator +
-    s"Liczba ocen krytyków: $numberOfCriticsRatings" + System.lineSeparator +
-    "---------------------------------------------" + System.lineSeparator +
-    s"Opis: $description" + System.lineSeparator
+    Messages("movie.title", title) + System.lineSeparator +
+      Messages("movie.director", director) + System.lineSeparator +
+      Messages("movie.screenWriter", screenWriter) + System.lineSeparator +
+      Messages("movie.genre", genre) + System.lineSeparator +
+      Messages("movie.productionYear", productionYear) + System.lineSeparator +
+      Messages("movie.duration", duration) + System.lineSeparator +
+      Messages("movie.premiere", premiere) + System.lineSeparator +
+      Messages("movie.actors", actorsString) + System.lineSeparator +
+      Messages("biggerdelimiter") + System.lineSeparator +
+      Messages("movie.rating", rating) + System.lineSeparator +
+      Messages("movie.numberOfRatings", numberOfRatings) + System.lineSeparator +
+      Messages("movie.criticsRating", criticsRating) + System.lineSeparator +
+      Messages("movie.numberOfCriticsRatings", numberOfCriticsRatings) + System.lineSeparator +
+      Messages("biggerdelimiter") + System.lineSeparator +
+      Messages("movie.description", description) + System.lineSeparator
   }
 }
