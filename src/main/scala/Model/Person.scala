@@ -1,11 +1,13 @@
 package Model
 
+import Configuration.AppLanguage
 import Model.PersonType.PersonType
+import com.osinka.i18n.Messages
 
 import scala.collection.mutable
 import scala.collection.mutable.ListBuffer
 
-class Person {
+class Person extends AppLanguage {
   val personType: List[PersonType] = List.empty[PersonType]
   val name: String = "name"
   val description: String = "description"
@@ -21,16 +23,19 @@ class Person {
   }
 
   override def toString: String = {
-    var personTypeBuffer = ListBuffer[String]()
-    for (pt <- personType) {
-      personTypeBuffer += pt.toString
-    }
 
-    s"Imię i nazwsko: $name" + System.lineSeparator +
-    s"Zawód filmowy: ${personTypeBuffer.toList.mkString(", ")}" + System.lineSeparator +
-    s"Data urodzenia: $dateOfBirth" + System.lineSeparator +
-    s"Miejsce urodzenia: $placeOfBirth" + System.lineSeparator +
-    s"Wzrost: $height" + System.lineSeparator +
-    s"Opis: $description" + System.lineSeparator
+//    TODO: Po co jest to jak można dać mkString na personType?
+//    var personTypeBuffer = ListBuffer[String]()
+//    for (pt <- personType) {
+//      personTypeBuffer += pt.toString
+//    }
+
+      Messages("person.name",name) + System.lineSeparator +
+      Messages("person.persontype",personType.mkString(", ")) + System.lineSeparator +
+      Messages("person.dateofbirth", dateOfBirth) + System.lineSeparator +
+      Messages("person.placeofbirth", placeOfBirth) + System.lineSeparator +
+      Messages("person.height", height) + System.lineSeparator +
+//      Messages("person.description", description.split("(?<=\\.)").mkString(System.lineSeparator())) + System.lineSeparator
+      Messages("person.description", description) + System.lineSeparator
   }
 }
