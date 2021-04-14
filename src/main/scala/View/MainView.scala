@@ -1,14 +1,16 @@
 package View
 
+import com.osinka.i18n.Messages
+
 class MainView extends ViewBase() {
   def display(): Unit = {
     println(delimiter)
     print(
-      "Filmweb scrapper" + System.lineSeparator +
+      Messages("title") + System.lineSeparator +
       delimiter + System.lineSeparator +
-      "1. Wyszukaj filmu" + System.lineSeparator +
-      "2. Wyszukaj ludzi kina" + System.lineSeparator +
-      "3. Wyszukaj postaci" + System.lineSeparator +
-      "4. Zamknij aplikację" + System.lineSeparator)
+      Messages("searchmovie") + System.lineSeparator +
+      Messages("searchpeople") + System.lineSeparator +
+      Messages("searchcharacters") + System.lineSeparator +
+      Messages("closeapp") + System.lineSeparator)
   }
 }

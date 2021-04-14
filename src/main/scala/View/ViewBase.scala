@@ -1,13 +1,15 @@
 package View
 
-class ViewBase {
-  val delimiter: String = "--------------------------------"
+import Configuration.AppLanguage
+import com.osinka.i18n.{Lang, Messages}
 
+class ViewBase extends AppLanguage {
+  val delimiter: String = Messages("delimiter")
   def askForChoice(): Unit = {
-    print("Twój wybór: ")
+    print(Messages("askforchoice"))
   }
 
   def givenNotANumber(): Unit = {
-    print("Należy wpisać liczbę!" + System.lineSeparator)
+    print(Messages("givennotanumber") + System.lineSeparator)
   }
 }
