@@ -6,7 +6,7 @@ import com.osinka.i18n.Messages
 class ViewBase {
   val delimiter: String = Messages("delimiter")
   def askForChoice(): Unit = {
-    print(Messages("askforchoice"))
+    print(Messages("askforchoice") + " ")
   }
 
   def givenNotANumber(): Unit = {

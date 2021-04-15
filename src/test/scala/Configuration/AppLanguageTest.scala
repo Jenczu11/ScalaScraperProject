@@ -38,7 +38,7 @@ class AppLanguageTest extends AnyFunSuite with GivenWhenThen {
     Then("Should throw: MissingResourceException.")
     withClue("Non existing string should throw this one.") {
       assertThrows[java.util.MissingResourceException] {
-        val testmessage = Messages("test.thisstringshouldnotexist.txt")
+        Messages("test.thisstringshouldnotexist.txt")
       }
     }
   }

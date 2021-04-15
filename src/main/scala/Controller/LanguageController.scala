@@ -1,7 +1,6 @@
 package Controller
 
-import Configuration.AppLanguage
-import Downloader.DownloaderType
+import Configuration.AppLanguage.userLang
 import View.LanguageView
 import com.osinka.i18n.Lang
 
@@ -13,28 +12,17 @@ class LanguageController extends BaseController  {
     languageView.display()
     languageView.askForChoice()
     val languageChoice = StdIn.readLine()
-    println(languageChoice)
     handleChoice(languageChoice)
 
     MainController.start()
-    //    Messages("text")(globalconfiguration=Lang("en"));
   }
 
   private def handleChoice(choice: String): Unit = {
-    //    choice match {
-    //      case "en" => userLang = Lang("en")
-    //      case "pl" => userLang = Lang("pl")
-    ////      case _ => userLang = Lang("en")
-    //    }
-    if (choice == "pl") {
-      println("elo polski")
-      AppLanguage.userLang = Lang("pl")
-    }
-    if (choice == "en") {
-      println("elo eng")
-      AppLanguage.userLang = Lang("en")
-    }
-
+        choice match {
+          case "en" => userLang = Lang("en")
+          case "pl" => userLang = Lang("pl")
+          case _ => userLang = Lang("en")
+        }
   }
 
 }

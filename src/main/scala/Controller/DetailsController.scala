@@ -4,9 +4,8 @@ import Downloader.{Downloader, DownloaderFactory, DownloaderType}
 import Model.SearchResult.{BaseSearchResult, CharactersSearchResult, MoviesSearchResult, PersonsSearchResult}
 import Parser.Details.{CharacterDetailsParser, MovieDetailsParser, PersonDetailsParser}
 import View.ObjectType.ObjectType
-import View.{DetailView, ObjectType, SearchView}
+import View.{DetailView, ObjectType}
 
-import scala.io.StdIn
 
 class DetailsController() extends BaseController {
   var searchResult: BaseSearchResult = new BaseSearchResult("none", "none")
