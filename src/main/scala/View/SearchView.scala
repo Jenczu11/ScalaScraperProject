@@ -26,7 +26,7 @@ class SearchView(searchType: ObjectType) extends ViewBase() with View {
       println(output)
       return
     }
-    output += Messages("searchview.noresults",results.size) + System.lineSeparator
+    output += Messages("searchview.noresults", results.size) + System.lineSeparator
     var position: Int = 1
     for (result <- results) {
       output += position + ". " + result + System.lineSeparator
@@ -39,9 +39,9 @@ class SearchView(searchType: ObjectType) extends ViewBase() with View {
     var output = ""
     if (resultsSize > 0) {
       searchType match {
-        case ObjectType.Movies => output += Messages("searchview.displayoptions.movie",resultsSize)
-        case ObjectType.Persons => output += Messages("searchview.displayoptions.persons",resultsSize)
-        case ObjectType.Characters => output += Messages("searchview.displayoptions.characters",resultsSize)
+        case ObjectType.Movies => output += Messages("searchview.displayoptions.movie", resultsSize)
+        case ObjectType.Persons => output += Messages("searchview.displayoptions.persons", resultsSize)
+        case ObjectType.Characters => output += Messages("searchview.displayoptions.characters", resultsSize)
       }
       output += System.lineSeparator
     }

@@ -40,16 +40,9 @@ class SearchController extends BaseController  {
     view.displaySearchResults(results)
     view.displayOptions(results.size)
     view.askForChoice()
-    val choice = StdIn.readInt()
 
-    if (results.nonEmpty && choice >= 1 && choice <= results.size) {
-      new DetailsController(results(choice - 1), objectType).start()
-    } else if (choice == 0) {
-      new SearchController(downloaderType).start()
-    } else {
-      MainController.start()
-    }
-
+    val choice = integerPrompt(view)
+    handleChoice(choice, results)
   }
 
   private def search(searchText: String): List[BaseSearchResult] = {
@@ -65,5 +58,15 @@ class SearchController extends BaseController  {
         results = new CharactersSearchParser(elements).parseItemsToList()
     }
     results
+  }
+
+  private def handleChoice(choice: Int, results: List[BaseSearchResult]): Unit = {
+    if (results.nonEmpty && choice >= 1 && choice <= results.size) {
+      new DetailsController(results(choice - 1), objectType, downloaderType).start()
+    } else if (choice == 0) {
+      new SearchController(downloaderType).start()
+    } else {
+      MainController.start()
+    }
   }
 }

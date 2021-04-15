@@ -1,11 +1,11 @@
 test.testMessage=Test message
-givennotanumber=Należy wpisać liczbę!
+givennotanumber=Please write a number!
 askforchoice=Your choice:
 delimiter=--------------------------------
 biggerdelimiter=---------------------------------------------
 mainview.title=Filmweb scrapper
 mainview.searchmovie=1. Search movie
-mainview.searchpeople=2. Search movie people
+mainview.searchpeople=2. Search persons
 mainview.searchcharacters=3. Search characters
 mainview.changelang=4. Change language app
 mainview.closeapp=5. Close app
@@ -32,7 +32,7 @@ movie.numberOfCriticsRatings=Number of critics ratings: {0}
 movie.description=Description: {0}
 
 character.name=Character: {0}
-character.numberOfLikes=Number of likes:{0}
+character.numberOfLikes=Number of likes: {0}
 character.creator=Creator: {0}
 character.dateOfCreation=Date of creation: {0}
 character.country=Country: {0}

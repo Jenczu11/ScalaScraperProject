@@ -9,16 +9,7 @@ object MainController extends BaseController  {
     val mainView = new MainView()
     mainView.display()
     mainView.askForChoice()
-    var choice = 0
-    while (choice == 0) {
-      try {
-        choice = StdIn.readInt()
-      } catch {
-        case _: NumberFormatException =>
-          mainView.givenNotANumber()
-          mainView.askForChoice()
-      }
-    }
+    val choice = integerPrompt(mainView)
     handleChoice(choice)
   }
 

@@ -16,4 +16,8 @@ class DetailView(objectType: ObjectType) extends ViewBase {
   def displayDetails(detailedObject: Any): Unit = {
     println(delimiter + System.lineSeparator + detailedObject)
   }
+
+  def displayOptions(): Unit = {
+    println(Messages("searchview.againprompt"))
+  }
 }
