@@ -1,8 +1,10 @@
 package Model
 
 import com.osinka.i18n.Messages
+
 import scala.collection.mutable
 import Configuration.AppLanguage.userLang
+import Model.ModelHelper.cutString
 
 class Movie extends {
   val title: String = "title"
@@ -48,7 +50,6 @@ class Movie extends {
       Messages("movie.criticsRating", criticsRating) + System.lineSeparator +
       Messages("movie.numberOfCriticsRatings", numberOfCriticsRatings) + System.lineSeparator +
       Messages("biggerdelimiter") + System.lineSeparator +
-//      Messages("movie.description", description.split("(?<=\\.)").mkString(System.lineSeparator())) + System.lineSeparator
-      Messages("movie.description", description) + System.lineSeparator
+      Messages("movie.description", cutString(description)) + System.lineSeparator
   }
 }

@@ -1,6 +1,7 @@
 package Model
 
 import Configuration.AppLanguage.userLang
+import Model.ModelHelper.cutString
 import Model.PersonType.PersonType
 import com.osinka.i18n.Messages
 
@@ -34,7 +35,6 @@ class Person {
       Messages("person.dateofbirth", dateOfBirth) + System.lineSeparator +
       Messages("person.placeofbirth", placeOfBirth) + System.lineSeparator +
       Messages("person.height", height) + System.lineSeparator +
-//      Messages("person.description", description.split("(?<=\\.)").mkString(System.lineSeparator())) + System.lineSeparator
-      Messages("person.description", description) + System.lineSeparator
+      Messages("person.description", cutString(description)) + System.lineSeparator
   }
 }

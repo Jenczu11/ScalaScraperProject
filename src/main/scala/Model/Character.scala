@@ -1,7 +1,9 @@
 package Model
 
 import Configuration.AppLanguage.userLang
+import Model.ModelHelper.cutString
 import com.osinka.i18n.Messages
+
 import scala.collection.mutable
 
 class Character {
@@ -25,6 +27,5 @@ class Character {
       Messages("character.creator", creator) + System.lineSeparator +
       Messages("character.dateOfCreation", dateOfCreation) + System.lineSeparator +
       Messages("character.country", country) + System.lineSeparator +
-      Messages("character.description", description.split("(?<=\\.)").mkString(System.lineSeparator())) + System.lineSeparator
-//      Messages("character.description",description) + System.lineSeparator
+      Messages("character.description", cutString(description)) + System.lineSeparator
 }
