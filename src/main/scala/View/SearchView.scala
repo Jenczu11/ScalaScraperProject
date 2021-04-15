@@ -26,7 +26,7 @@ class SearchView(searchType: ObjectType) extends ViewBase() with View {
       println(output)
       return
     }
-    output += Messages("searchview.noresults", results.size) + System.lineSeparator
+    output += Messages("searchview.foundxresults", results.size) + System.lineSeparator
     var position: Int = 1
     for (result <- results) {
       output += position + ". " + result + System.lineSeparator
