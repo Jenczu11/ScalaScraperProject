@@ -1,6 +1,6 @@
 test.testMessage=Test message
 givennotanumber=Należy wpisać liczbę!
-askforchoice=Twój wybór:
+askforchoice=Your choice:
 delimiter=--------------------------------
 biggerdelimiter=---------------------------------------------
 mainview.title=Filmweb scrapper

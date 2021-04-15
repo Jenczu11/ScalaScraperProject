@@ -1,9 +1,9 @@
 package View
 
-import Configuration.AppLanguage
-import com.osinka.i18n.{Lang, Messages}
+import Configuration.AppLanguage.userLang
+import com.osinka.i18n.Messages
 
-class ViewBase extends AppLanguage {
+class ViewBase {
   val delimiter: String = Messages("delimiter")
   def askForChoice(): Unit = {
     print(Messages("askforchoice"))

@@ -1,13 +1,12 @@
 package Model
 
-import Configuration.AppLanguage
+import Configuration.AppLanguage.userLang
 import Model.PersonType.PersonType
 import com.osinka.i18n.Messages
 
 import scala.collection.mutable
-import scala.collection.mutable.ListBuffer
 
-class Person extends AppLanguage {
+class Person {
   val personType: List[PersonType] = List.empty[PersonType]
   val name: String = "name"
   val description: String = "description"

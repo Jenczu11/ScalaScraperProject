@@ -1,6 +1,6 @@
 package View
 
-import Model.SearchResult.BaseSearchResult
+import Configuration.AppLanguage.userLang
 import View.ObjectType.ObjectType
 import com.osinka.i18n.Messages
 

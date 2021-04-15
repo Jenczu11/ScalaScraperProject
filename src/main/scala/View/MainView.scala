@@ -1,5 +1,6 @@
 package View
 
+import Configuration.AppLanguage.userLang
 import com.osinka.i18n.Messages
 
 class MainView extends ViewBase() {

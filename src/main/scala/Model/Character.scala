@@ -1,11 +1,10 @@
 package Model
 
-import Configuration.AppLanguage
+import Configuration.AppLanguage.userLang
 import com.osinka.i18n.Messages
-
 import scala.collection.mutable
 
-class Character extends AppLanguage {
+class Character {
   val name: String = "name"
   val description: String = "description"
   val numberOfLikes: String = "0"

@@ -1,11 +1,10 @@
 package Model
 
-import Configuration.AppLanguage
 import com.osinka.i18n.Messages
-
 import scala.collection.mutable
+import Configuration.AppLanguage.userLang
 
-class Movie extends AppLanguage {
+class Movie extends {
   val title: String = "title"
   val genre: String = "genre"
   val productionYear: String = "2000"
