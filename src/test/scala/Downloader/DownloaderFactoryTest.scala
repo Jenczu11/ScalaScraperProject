@@ -42,5 +42,17 @@ class DownloaderFactoryTest extends AnyFeatureSpec with GivenWhenThen {
       Then("The downloader url should contain a word 'characters'")
       info("Downloader url: " + downloader.baseUrl)
     }
+
+    Scenario("User wants to find details about Tom Hanks") {
+
+      Given("Details downloader")
+      val downloaderType : DownloaderType = DownloaderType.Details
+      val downloader = DownloaderFactory.apply(downloaderType)
+      val doc = downloader.download("/person/Tom+Hanks-124")
+      assert(doc.toString().contains("Tom Hanks"))
+
+      When("User chose to search for details about Tom Hanks")
+      Then("The document returned by the downloader should contain the name 'Tom Hanks'")
+    }
   }
 }
